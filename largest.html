@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Find the Largest Number Among 2 </title>
+  <script>
+    function findLargest() {
+      var number1 = parseInt(document.getElementById("number1").value);
+      var number2 = parseInt(document.getElementById("number2").value);
+
+      var largestNumber = number1;
+      if (number2 > number1) {
+        largestNumber = number2;
+      }
+
+      document.getElementById("result").innerHTML = "The largest number is: " + largestNumber;
+    }
+  </script>
+</head>
+<body>
+  <h1>Find the Largest Number</h1>
+  <label for="number1">Number 1:</label>
+  <input type="number" id="number1"><br>
+  <label for="number2">Number 2:</label>
+  <input type="number" id="number2"><br>
+  <button onclick="findLargest()">Find Largest</button>
+  <p id="result"></p>
+</body>
+</html>

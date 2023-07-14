@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Display Current Date on Button Click</title>
+  <script>
+    function displayCurrentDate() {
+      var currentDate = new Date();
+      var dateElement = document.getElementById("date");
+      dateElement.textContent = currentDate.toDateString();
+    }
+  </script>
+  <style>
+    body{
+        padding: 100px;
+        background-color: aliceblue;
+    }
+    button{
+        padding: 1rem;
+        background-color: greenyellow;
+        border-radius: 5px;
+        border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <h1>Click the button to display the current date:</h1>
+  <button onclick="displayCurrentDate()">Display Date</button>
+  <p id="date"></p>
+</body>
+</html>

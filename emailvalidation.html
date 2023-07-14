@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Email Validation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    input[type="email"] {
+      padding: 10px;
+      width: 300px;
+    }
+
+    button[type="submit"] {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    #resultMessage {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Email Validation</h1>
+  <form>
+    <input type="email" id="emailInput" placeholder="Enter your email address">
+    <button type="submit" id="submitButton">Submit</button>
+  </form>
+  <p id="resultMessage"></p>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var form = document.querySelector('form');
+      var emailInput = document.getElementById('emailInput');
+      var resultMessage = document.getElementById('resultMessage');
+      
+      form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+        
+        var email = emailInput.value;
+        var isValid = validateEmail(email);
+        
+        if (isValid) {
+          resultMessage.textContent = 'Valid email address!';
+          resultMessage.style.color = 'green';
+        } else {
+          resultMessage.textContent = 'Invalid email address!';
+          resultMessage.style.color = 'red';
+        }
+      });
+    });
+
+    function validateEmail(email) {
+      var pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return pattern.test(email);
+    }
+  </script>
+</body>
+</html>

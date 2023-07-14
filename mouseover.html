@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mouseover and Mouseout Event</title>
+  <style>
+    body {
+      background-color: #f1f1f1;
+      border: 5px solid black;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var statusElement = document.getElementById("status");
+      var body = document.querySelector("body");
+
+      body.addEventListener("mouseover", function() {
+        statusElement.textContent = "You are in";
+        body.style.backgroundColor = "#ffff00"; // Set the new background color
+      });
+
+      body.addEventListener("mouseout", function() {
+        statusElement.textContent = "You are out";
+        body.style.backgroundColor = "#f1f1f1"; // Restore the original background color
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>Move your mouse over the page!</h1>
+  <p id="status"></p>
+</body>
+</html>
